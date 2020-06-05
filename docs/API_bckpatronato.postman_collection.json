@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "2b116928-d078-4b40-a172-06d5c45281b3",
+		"name": "API_bckpatronato",
+		"description": "Pruebas del Backend de la web app de Patronato",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/sec",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/sec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sec"
+					]
+				},
+				"description": "Muestra de Ruta raíz '/' de la Entidad de Seguridad"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/mocion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/mocion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mocion"
+					]
+				},
+				"description": "Muestra de la Ruta raíz '/' de la Entidad de Moción"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
