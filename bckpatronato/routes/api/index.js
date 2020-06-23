@@ -12,6 +12,7 @@ var router = express.Router();
 //Se coloca solo el nombre de la carpeta, pero no el index.js ya que por ser nombrado index lo toma automaticamente
 var secRoutes = require('./sec');
 var mocionRoutes = require('./mocion');
+var alumnosRoutes = require('./alumnos');
 //var donacionRoutes = require('./donacion');
 //var canastasRoutes = require('./donacion/canastas');
 
@@ -21,6 +22,7 @@ var mocionRoutes = require('./mocion');
 //Se usa todo lo que esta en la carpeta que ya viene en la variable
 router.use('/sec', secRoutes);
 router.use('/mocion', mocionRoutes);
+router.use('/alumnos', alumnosRoutes); 
 //router.use('/donacion', donacionRoutes);
 //router.use('/donacion/canastas', canastasRoutes);
 

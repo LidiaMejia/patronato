@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+require('dotenv').config(); //Actualiza las variables de entorno para que process.env.PORT pueda leer las variables de .env
 
 /**
  * Module dependencies.
