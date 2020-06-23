@@ -29,6 +29,38 @@ router.get('/', async (req, res)=>{
 }); // get /
 
 
+//GET DE UN ALUMNO POR ID
+router.get('/one/:id', async (req, res)=>{
+    try
+    {
+        let id = req.params.id;
+        let cuenta = await model.getOne(id);
+        res.status(200).json(cuenta);
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //get /one/:id
+
+
+//GET DE UN ALUMNO POR CUENTA
+router.get('/cuenta/:cuenta', async (req, res)=>{
+    try
+    {
+        let cuenta = req.params.cuenta;
+        let alumByCuenta = await model.getByCuenta(cuenta);
+        res.status(200).json(alumByCuenta);
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //get /cuenta/:cuenta
+
+
 //POST AGREGAR ALUMNO
 router.post('/new', async (req, res)=>{
     try
