@@ -21,9 +21,9 @@ router.get('/', async (req, res)=>{
         let alumnos = await model.getAll();
         res.status(200).json(alumnos);
     }
-    catch(e)
+    catch(err)
     {
-        console.log(e);
+        console.log(err);
         res.status(500).json({"ERROR":"Algo salió mal :( Por favor intente de nuevo"});
     }
 }); // get /
@@ -37,9 +37,9 @@ router.get('/one/:id', async (req, res)=>{
         let cuenta = await model.getOne(id);
         res.status(200).json(cuenta);
     }
-    catch(e)
+    catch(err)
     {
-        console.log(e);
+        console.log(err);
         res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
     }
 }); //get /one/:id
@@ -53,9 +53,9 @@ router.get('/cuenta/:cuenta', async (req, res)=>{
         let alumByCuenta = await model.getByCuenta(cuenta);
         res.status(200).json(alumByCuenta);
     }
-    catch(e)
+    catch(err)
     {
-        console.log(e);
+        console.log(err);
         res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
     }
 }); //get /cuenta/:cuenta
@@ -69,13 +69,44 @@ router.post('/new', async (req, res)=>{
         const result = await model.addOne(cuenta, nombre);
         res.status(200).json(result); //Por ahora mostramos el resultado
     }
-    catch(e)
+    catch(err)
     {
-        console.log(e);
+        console.log(err);
         res.status(500).json({ "ERROR": "Algo salió mal :( Por favor intente de nuevo"});
     }
-}); // post /new
+}); //post /new
 
+
+//PUT AUMENTAR LIKES
+router.put('/like/:id', async (req, res)=>{
+    try
+    {
+        let id = req.params.id;
+        const result = await model.like(id);
+        res.status(200).json(result);
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //put/like/:id
+
+
+//PUT AUMENTAR DISLIKES
+router.put('/dislike/:id', async (req, res)=>{
+    try
+    {
+        let id = req.params.id;
+        const result = await model.dislike(id);
+        res.status(200).json(result);
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //put /dislike/:id
 
 
 module.exports = router;

@@ -7,6 +7,174 @@
 	},
 	"item": [
 		{
+			"name": "Alumnos",
+			"item": [
+				{
+					"name": "{{HOST}}/api/alumnos/one/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/one/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"one",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ee96981002b83ef17137fdf"
+								}
+							]
+						},
+						"description": "Muestra los datos de un alumno buscando por _id"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos"
+							]
+						},
+						"description": "Obtiene los datos de todos los alumnos registrados en la Colección \"Alumnos\" de la BDD en MongoDB"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cuenta",
+									"value": "0801199400899",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Zoila Vaca",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/new",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"new"
+							]
+						},
+						"description": "Guardar un nuevo alumno en la Colección \"Alumnos\" de la BDD en MongoDB"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/cuenta/:cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/cuenta/:cuenta",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"cuenta",
+								":cuenta"
+							],
+							"variable": [
+								{
+									"key": "cuenta",
+									"value": "0801199400899"
+								}
+							]
+						},
+						"description": "Muestra los datos de un alumno buscando por su numero de cuenta"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/dislike/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/dislike/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"dislike",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ef2bb10b0b5ef631296dafb"
+								}
+							]
+						},
+						"description": "Incrementar en 1 los dislike de un alumno específico"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/like/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/like/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"like",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ef2bb10b0b5ef631296dafb"
+								}
+							]
+						},
+						"description": "Incrementar likes en 1 de un alumno específico"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "http://localhost:3000/api/sec",
 			"request": {
 				"method": "GET",
@@ -45,114 +213,6 @@
 					]
 				},
 				"description": "Muestra de la Ruta raíz '/' de la Entidad de Moción"
-			},
-			"response": []
-		},
-		{
-			"name": "{{HOST}}/api/alumnos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}/api/alumnos",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"alumnos"
-					]
-				},
-				"description": "Obtiene los datos de todos los alumnos registrados en la Colección \"Alumnos\" de la BDD en MongoDB"
-			},
-			"response": []
-		},
-		{
-			"name": "{{HOST}}/api/alumnos/new",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "cuenta",
-							"value": "0801199400899",
-							"type": "text"
-						},
-						{
-							"key": "nombre",
-							"value": "Zoila Vaca",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{HOST}}/api/alumnos/new",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"alumnos",
-						"new"
-					]
-				},
-				"description": "Guardar un nuevo alumno en la Colección \"Alumnos\" de la BDD en MongoDB"
-			},
-			"response": []
-		},
-		{
-			"name": "{{HOST}}/api/alumnos/one/:id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}/api/alumnos/one/:id",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"alumnos",
-						"one",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "5ee96981002b83ef17137fdf"
-						}
-					]
-				},
-				"description": "Muestra los datos de un alumno buscando por _id"
-			},
-			"response": []
-		},
-		{
-			"name": "{{HOST}}/api/alumnos/cuenta/:cuenta",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}/api/alumnos/cuenta/:cuenta",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"alumnos",
-						"cuenta",
-						":cuenta"
-					],
-					"variable": [
-						{
-							"key": "cuenta",
-							"value": "0801199400899"
-						}
-					]
-				},
-				"description": "Muestra los datos de un alumno buscando por su numero de cuenta"
 			},
 			"response": []
 		}

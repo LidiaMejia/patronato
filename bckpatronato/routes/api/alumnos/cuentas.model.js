@@ -28,7 +28,7 @@ module.exports = class
     }
 
 
-    //Metodos Operativos. Acciones con la colección
+    ////////////////////// Metodos Operativos. Acciones con la colección
     static async getAll()
     {
         try
@@ -41,10 +41,10 @@ module.exports = class
                 return [];
             }
         }
-        catch(e)
+        catch(err)
         {
-            console.log(e);
-            return e;
+            console.log(err);
+            return err;
         }
     }
 
@@ -63,13 +63,13 @@ module.exports = class
         try
         {
             let filter = {"_id": new ObjectId(id)};
-            let cuenta = await cuentasColl.findOne(filter);
+            let cuenta = await cuentasColl.findOne(filter); //findOne() obtiene solo un dato (El primer dato en caso de repetidos)
             return cuenta;
         }
-        catch(e)
+        catch(err)
         {
-            console.log(e);
-            return e;
+            console.log(err);
+            return err;
         }  
     }
 
@@ -79,13 +79,13 @@ module.exports = class
         try
         {
             let filter = {"cuenta":cuenta};
-            let AlumByCuenta = await cuentasColl.findOne(filter); //findOne() obtiene solo el primer dato en caso de repetidos
+            let AlumByCuenta = await cuentasColl.findOne(filter);
             return AlumByCuenta;
         }
-        catch(e)
+        catch(err)
         {
-            console.log(e);
-            return e;
+            console.log(err);
+            return err;
         }
     }
 
@@ -98,13 +98,59 @@ module.exports = class
             const result = await cuentasColl.insertOne(newAlumno);
             return result; //Por ahora devolvemos el result
         }
-        catch(e)
+        catch(err)
         {
-            console.log(e);
-            return e;
+            console.log(err);
+            return err;
         }
     }
 
+
+    /**
+     * Para actualizar un dato se necesita: 
+     * 
+     * filtro -> Saber que documento (registro) se va a actualizar
+     * y lo que se va a actualizar:
+     * "$set" -> Es para actualizar datos, existan o se agreguen a un registro
+     * "$inc" -> Es para aumentar o decrementar un contador
+     * 
+     * En caso de que se deseen actualizar TODOS LOS REGISTROS se debe DEJAR EL FILTRO VACIO {} y COLOCAR UN TERCER PARAMETRO {multi:true}
+     */
+
+    static async like(id)
+    {
+        try
+        {
+            let filtro = {"_id": new ObjectId(id)};
+
+            //Se agrega un TimeStamp universal de Linux para después obtener el valor de fecha en forma local
+            let update = {"$inc":{"like":1}, "$set":{"last_modified": new Date().getTime()}};
+            const result = await cuentasColl.updateOne(filtro, update);
+            return result;
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    }
+
+
+    static async dislike(id)
+    {
+        try
+        {
+            let filtro = {"_id": new ObjectId(id)};
+            let update = {"$inc":{"dislike":1}, "$set":{"last_modified": new Date().getTime()}};
+            const result = await cuentasColl.updateOne(filtro, update);
+            return result;
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    }
 
 
 
