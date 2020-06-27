@@ -109,5 +109,38 @@ router.put('/dislike/:id', async (req, res)=>{
 }); //put /dislike/:id
 
 
+
+//DELETE BORRAR UN ALUMNO
+router.delete('/delOne/:id', async (req, res)=>{
+    try
+    {
+        let id = req.params.id;
+        const result = await model.deleteOne(id);
+        return result;
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //delete /delOne/:id
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.get('/warn', async (req, res)=>{
+    try
+    {
+        let result = await model.getWarningAlumnos();
+        res.status(200).json(result);
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.status(500).json({ "ERROR":"Algo salió mal :( Por favor intente de nuevo"});
+    }
+}); //get /warn
+
+
 module.exports = router;
 

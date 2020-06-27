@@ -107,7 +107,7 @@ module.exports = class
 
 
     /**
-     * Para actualizar un dato se necesita: 
+     * Para ACTUALIZAR un dato se necesita: 
      * 
      * filtro -> Saber que documento (registro) se va a actualizar
      * y lo que se va a actualizar:
@@ -152,6 +152,58 @@ module.exports = class
         }
     }
 
+
+    static async deleteOne(id)
+    {
+        try
+        {
+            let filtro = {"_id": new ObjectId(id)};
+            const result = await cuentasColl.deleteOne(filtro);
+            return result;
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    }
+
+
+
+    /**
+     * FUNCIONES MÁS ESPECÍFICAS, COMO POLÍTICAS DE NEGOCIO ---> INIGUALDADES O INEQUIDADES
+     * 
+     * Por ejemplo si se desean obtener los alumnos que tengan dislike mayores a 3 para generar una advertencia e informarle al alumno,
+     * u obtener los alumnos que tengan entre 1 y 3 dislikes o que tenga 0 o 3 dislikes...
+     * 
+     * Para esto MongoDB tiene funciones que emulan el uso de >, <, >=, <=, !=, between, and, or:
+     * "$lt" ->  less than (Menor que)
+     * "$gt" ->  greater than (Mayor que)
+     * "$gte" -> greater than equal (Mayor o igual)
+     * "$lte" -> less than equal (Menor o igual)
+     * "$ne"  -> not equal (No es igual)
+     * 
+     * "$or":[]  ->  ARREGLO DE FILTROS \  Estos son arreglos porque se debe poner 
+     * "$and":[] ->  ARREGLO DE FILTROS /  el filtro 2 veces en la sentencia
+     * 
+     * SE COLOCA PRIMERO EL DATO A COMPARAR Y DESPUÉS LA COMPARACIÓN
+     */
+
+     //OBTENER ALUMNOS CON DISLIKE MAYOR A 5
+    static async getWarningAlumnos()
+    {
+        try
+        {
+            let query = {"dislike":{"$gt":5}};
+            let result = await cuentasColl.find(query);
+            return result.toArray();
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    }
 
 
 } //fin class

@@ -136,7 +136,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5ef2bb10b0b5ef631296dafb"
+									"value": "5ee96f23002b83ef17137fe0"
 								}
 							]
 						},
@@ -163,11 +163,58 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5ef2bb10b0b5ef631296dafb"
+									"value": "5ee96981002b83ef17137fdf"
 								}
 							]
 						},
 						"description": "Incrementar likes en 1 de un alumno específico"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/delOne/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/delOne/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"delOne",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ef6f82e8a1e47019edf646a"
+								}
+							]
+						},
+						"description": "Borrar un alumno de la Colección"
+					},
+					"response": []
+				},
+				{
+					"name": "{{HOST}}/api/alumnos/warn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/alumnos/warn",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"alumnos",
+								"warn"
+							]
+						},
+						"description": "Obtener alumnos que tengan más de 5 dislikes"
 					},
 					"response": []
 				}
