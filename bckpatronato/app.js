@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log(app.get('env')); //OBTENER EN QUE AMBIENTE SE ESTÁ TRABAJANDO
+
 app.use('/', indexRouter);
 app.use('/api', apiRouter); //SE USA TODO DE LA CARPETA API QUE ESTA EN apiRouter
 
