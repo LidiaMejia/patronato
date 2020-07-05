@@ -10,7 +10,7 @@
 			"name": "Alumnos",
 			"item": [
 				{
-					"name": "{{HOST}}/api/alumnos/one/:id",
+					"name": "Buscar Alumno por _id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -37,7 +37,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos",
+					"name": "Todos los Alumnos",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -56,7 +56,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/new",
+					"name": "Nuevo Alumno",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -91,7 +91,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/cuenta/:cuenta",
+					"name": "Buscar Alumno por Cuenta",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -118,7 +118,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/dislike/:id",
+					"name": "Aumentar Dislikes",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -145,7 +145,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/like/:id",
+					"name": "Aumentar Likes",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -172,7 +172,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/delOne/:id",
+					"name": "Borrar un Alumno",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -199,7 +199,7 @@
 					"response": []
 				},
 				{
-					"name": "{{HOST}}/api/alumnos/warn",
+					"name": "Alerta Alumnos con Dislikes",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -222,46 +222,149 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "http://localhost:3000/api/sec",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/sec",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sec"
-					]
+			"name": "Seguridad",
+			"item": [
+				{
+					"name": "Raíz_Seguridad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sec"
+							]
+						},
+						"description": "Muestra de Ruta raíz '/' de la Entidad de Seguridad"
+					},
+					"response": []
 				},
-				"description": "Muestra de Ruta raíz '/' de la Entidad de Seguridad"
-			},
-			"response": []
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "lidiamejia29@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "corpdemo%33",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/api/sec/register",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"sec",
+								"register"
+							]
+						},
+						"description": "Registro de un nuevo usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "lidiamejia29@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "corpdemo%33",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/api/sec/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"sec",
+								"login"
+							]
+						},
+						"description": "Inicio de Sesión en la Aplicación"
+					},
+					"response": []
+				},
+				{
+					"name": "Todos los Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/sec/usuarios",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"sec",
+								"usuarios"
+							]
+						},
+						"description": "Obtener los datos de todos los usuarios de la BDD"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "http://localhost:3000/api/mocion",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/mocion",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"mocion"
-					]
-				},
-				"description": "Muestra de la Ruta raíz '/' de la Entidad de Moción"
-			},
-			"response": []
+			"name": "Mociones",
+			"item": [
+				{
+					"name": "Raiz_Mociones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/mocion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mocion"
+							]
+						},
+						"description": "Muestra de la Ruta raíz '/' de la Entidad de Moción"
+					},
+					"response": []
+				}
+			],
+			"description": "Carpeta de Rutas de Mociones",
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

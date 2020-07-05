@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 require('dotenv').config(); //Actualiza las variables de entorno para que process.env.PORT pueda leer las variables de .env
-                            //Si sa error, revisar que .env este dentro de la carpeta del backend
+                            //Si da error, revisar que .env este dentro de la carpeta del backend
 
 /**
  * Module dependencies.
