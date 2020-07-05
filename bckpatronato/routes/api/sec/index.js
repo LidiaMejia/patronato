@@ -17,8 +17,18 @@ init();
 privateRouter.get('/usuarios', async (req, res)=>{
     try
     {
-        let usuarios = await model.getAll();
-        res.status(200).json(usuarios);
+        /* En las RUTAS PRIVADAS podemos acceder a los datos del usuario desde el req (Se traen del user = payload) 
+           PARA AUTORIZARLOS A VER CIERTAS COSAS O NO SEGUN SU ROL*/
+
+        if( req.user.roles.includes('admin') && true ) //Si se incluye en sus roles el admin (pueden ponerse varios roles) y es true
+        {
+            let usuarios = await model.getAll();
+            res.status(200).json(usuarios);
+        }
+        else
+        {
+            res.status(401).json({"ERROR":"No está autorizado a ver información de los Usuarios"});
+        }
     }
     catch(err)
     {

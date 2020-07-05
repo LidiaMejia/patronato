@@ -39,6 +39,16 @@
 				{
 					"name": "Todos los Alumnos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxM2FmNDc0NDAwOTFmNjRkZGIwNzkiLCJlbWFpbCI6ImxpZGlhbWVqaWEyOUB5YWhvby5jb20iLCJyb2xlcyI6WyJwdWJsaWMiXSwiaWF0IjoxNTkzOTMzMzAzLCJleHAiOjE1OTM5NDA1MDN9._motQ-jLlfbTJ2A5kqECqVVZyjN46GOCw88eNNakfqE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -318,6 +328,16 @@
 				{
 					"name": "Todos los Usuarios",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxM2FmNDc0NDAwOTFmNjRkZGIwNzkiLCJlbWFpbCI6ImxpZGlhbWVqaWEyOUB5YWhvby5jb20iLCJyb2xlcyI6WyJwdWJsaWMiXSwiaWF0IjoxNTkzOTM3OTk3LCJleHAiOjE1OTM5NDUxOTd9.TVLgMb9pfkBmotGpAxXVpv26TRBGNHZxvnxDwKFOKqA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
