@@ -2,6 +2,7 @@
 
 const express = require('express');
 let router = express.Router();
+let privateRouter = express.Router(); //PARA RUTAS PRIVADAS. LOS NOMBRES DE LAS RUTAS NO DEBEN COINCIDIR CON LOS DE LAS RUTAS PÚBLICAS!!!!
 let model = require('./sec.model');
 let jwt = require('jsonwebtoken');
 
@@ -13,7 +14,7 @@ init();
 
 
 //Rutas
-router.get('/usuarios', async (req, res)=>{
+privateRouter.get('/usuarios', async (req, res)=>{
     try
     {
         let usuarios = await model.getAll();
@@ -95,5 +96,5 @@ router.post('/login', async (req, res)=>{
 
 
 
-
-module.exports = router;
+//Se exportan las variables para controlar rutas públicas y privadas
+module.exports = {pub: router, priv: privateRouter};

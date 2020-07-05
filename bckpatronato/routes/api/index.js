@@ -32,7 +32,7 @@ passport.use(
 
 //1. Incorporar las rutas
 //Se coloca solo el nombre de la carpeta, pero no el index.js ya que por ser nombrado index lo toma automaticamente
-var secRoutes = require('./sec');
+var {pub, priv} = require('./sec');  /**** SEC TRAE RUTAS PÚBLICAS Y PRIVADAS  ****/
 var mocionRoutes = require('./mocion');
 var alumnosRoutes = require('./alumnos');
 //var donacionRoutes = require('./donacion');
@@ -44,13 +44,15 @@ var alumnosRoutes = require('./alumnos');
 //Se usa todo lo que esta en la carpeta que ya viene en la variable
 
 //Rutas Públicas
-router.use('/sec', secRoutes);
+router.use('/sec', pub); //USA LA PARTE PÚBLICA
+
 
 //Rutas Privadas
-//Crear un Middleware para que active la estrategia y autorize entrar a las rutas solo a los usuarios cuyo JWT lo permite
+//Crear un Middleware para que active la estrategia y autentique a entrar a las rutas solo a los usuarios cuyo JWT lo permite
 const jwtMiddleware = passport.authenticate('jwt', {session:false});
 
 
+router.use('/sec', jwtMiddleware, priv); //USA LA PARTE PRIVADA 
 router.use('/mocion', jwtMiddleware, mocionRoutes);
 router.use('/alumnos', jwtMiddleware, alumnosRoutes); 
 //router.use('/donacion', donacionRoutes);
