@@ -385,6 +385,125 @@
 			],
 			"description": "Carpeta de Rutas de Mociones",
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Miembros",
+			"item": [
+				{
+					"name": "Nueva Colonia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxM2FmNDc0NDAwOTFmNjRkZGIwNzkiLCJlbWFpbCI6ImxpZGlhbWVqaWEyOUB5YWhvby5jb20iLCJyb2xlcyI6WyJwdWJsaWMiXSwiaWF0IjoxNTk0MzY5MDQzLCJleHAiOjE1OTQzNzYyNDN9.WG9J6r8iGVoB-AyaMxTKAY2PV_G59zl8cdclBAIO2-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "colonia",
+									"value": "El Hogar",
+									"type": "text"
+								},
+								{
+									"key": "departamento",
+									"value": "Francisco Morazán",
+									"type": "text"
+								},
+								{
+									"key": "municipio",
+									"value": "Distrito Central",
+									"type": "text"
+								},
+								{
+									"key": "barrio_seguro",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "longitud",
+									"value": "14.079945",
+									"type": "text"
+								},
+								{
+									"key": "latitud",
+									"value": "-87.190653",
+									"type": "text"
+								},
+								{
+									"key": "radio_km",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/api/miembros/new",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"miembros",
+								"new"
+							]
+						},
+						"description": "Ingresar una nueva Colonia con ubicación en la BDD"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Patronatos cerca",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAxM2FmNDc0NDAwOTFmNjRkZGIwNzkiLCJlbWFpbCI6ImxpZGlhbWVqaWEyOUB5YWhvby5jb20iLCJyb2xlcyI6WyJwdWJsaWMiXSwiaWF0IjoxNTk0NTkxNzc0LCJleHAiOjE1OTQ1OTg5NzR9.hXlXel_jVNpHKnztQ5xantpdfvar_zD9OpwJazuaqAg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/miembros/near/:long/:lat",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"miembros",
+								"near",
+								":long",
+								":lat"
+							],
+							"variable": [
+								{
+									"key": "long",
+									"value": "14.137350"
+								},
+								{
+									"key": "lat",
+									"value": "-87.219089"
+								}
+							]
+						},
+						"description": "Obtener los patronatos cercanos según la ubicación actual"
+					},
+					"response": []
+				}
+			],
+			"description": "Miembros y Colonias del Patronato",
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

@@ -35,6 +35,7 @@ passport.use(
 var {pub, priv} = require('./sec');  /**** SEC TRAE RUTAS PÚBLICAS Y PRIVADAS  ****/
 var mocionRoutes = require('./mocion');
 var alumnosRoutes = require('./alumnos');
+var miembrosRoutes = require('./miembros');
 //var donacionRoutes = require('./donacion');
 //var canastasRoutes = require('./donacion/canastas');
 
@@ -55,6 +56,7 @@ const jwtMiddleware = passport.authenticate('jwt', {session:false});
 router.use('/sec', jwtMiddleware, priv); //USA LA PARTE PRIVADA 
 router.use('/mocion', jwtMiddleware, mocionRoutes);
 router.use('/alumnos', jwtMiddleware, alumnosRoutes); 
+router.use('/miembros', jwtMiddleware, miembrosRoutes);
 //router.use('/donacion', donacionRoutes);
 //router.use('/donacion/canastas', canastasRoutes);
 
