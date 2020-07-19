@@ -5,11 +5,12 @@ import './App.css';
 //IMPORTAR PÁGINAS PARA MOSTRARLAS
 //import Page from './components/Page';
 //import Home from './components/Content/Home';
-import SignIn from './components/Content/SignIn';
+//import SignIn from './components/Content/SignIn';
+import Votes from './components/Content/Votes';
 
 function App() {
   return (
-      <SignIn></SignIn>
+      <Votes></Votes>
       // <Page 
       //   title = "Mi primera Página"
       //   showHeader = {true}

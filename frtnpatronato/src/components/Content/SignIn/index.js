@@ -8,6 +8,7 @@ export default class extends Component{
         super();
         this.state = { email:'', password:'' };
 
+        //TODO METODOD QUE HAGAMOS DEBE SER LIGADO A LA CLASE CON bind
         this.onTextChange = this.onTextChange.bind(this);
         this.onClickButton = this.onClickButton.bind(this);
     }
