@@ -22,12 +22,28 @@ export default class extends Component{
     {
         return(
             <Page
-                title="Home"
+                title="Inicio de la Página"
                 showHeader={true}
                 showFooter={true}
             >
                 {/* ESTO VA AL children */}
-                <p>Lorem Ipsum Text Home</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula, 
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p> 
 
                 {/* En el Evento onClick se manda a llamar nuestra función */}
                 <button onClick = {this.onClickButton}>SignIn</button>

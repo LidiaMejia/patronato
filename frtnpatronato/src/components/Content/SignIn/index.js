@@ -34,6 +34,8 @@ export default class extends Component{
               showHeader = {true}
               showFooter = {true}
             >
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet tellus. Quisque scelerisque vehicula tellus ac semper. Sed porta rhoncus laoreet. Ut ut cursus magna, id molestie orci. Vestibulum ultrices metus eu tellus vulputate ultricies. Praesent est ligula,
+                    dapibus sed ex vitae, venenatis tristique nisi. Aenean vel metus et purus pharetra malesuada et sit amet elit. Suspendisse vel viverra nunc. Proin imperdiet sodales vulputate.</p>
               <fieldset>
                   <label for="email">Email: &nbsp;</label>
                   <input type="email" name="email" value={this.state.email} placeholder="tucorreo@gmail.com" onChange={this.onTextChange}/>

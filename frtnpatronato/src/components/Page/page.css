@@ -1,0 +1,6 @@
+main{
+    margin-top: 66px; /* 2px más que el height del Header y Footer */
+    margin-bottom: 66px;
+    padding: 0.5em 1em;
+    text-align: justify;
+}

@@ -1,0 +1,31 @@
+footer{
+    display: flex;
+    background-color: #5D4037;
+    position: fixed;
+    left:0px; 
+    bottom:0px;
+}
+
+footer nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+}
+
+footer nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+}
+
+footer nav ul li a{
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+}

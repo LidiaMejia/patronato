@@ -1,0 +1,16 @@
+header{
+    background-color: #5D4037;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 1px 5px #000;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+}
+
+header h1{
+    font-size: 1.2em;
+}

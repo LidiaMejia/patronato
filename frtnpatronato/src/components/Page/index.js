@@ -1,4 +1,5 @@
 import React from 'react';  
+import './page.css';
 
 //Importar componentes
 import Header from '../Header';

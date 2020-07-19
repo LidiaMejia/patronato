@@ -2,9 +2,11 @@
 //Va a controlar el estado del contador de Votos
 
 import React, {Component} from 'react';
+import {NavLinkBtn} from '../../Button'; //Traemos nuestra librería personalizada
 import Page from '../../Page';
 import VotingDeck from './VotingDeck';
 
+import './votes.css';
 
 export default class extends Component
 {
@@ -41,6 +43,11 @@ export default class extends Component
                     <p>Sí: {this.state.contSí}</p> 
                     <p>No: {this.state.contNo}</p>
                     <p>Abstener: {this.state.contAbstener}</p>
+                </section>
+
+                <br/>
+                <section>
+                    <NavLinkBtn toLink="/" className="btnBack">Regresar</NavLinkBtn>
                 </section>
             </Page>
         );
